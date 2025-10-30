@@ -1,0 +1,341 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #446a91 0%, #2c4a6b 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.bg-primary {
+    background: linear-gradient(180deg, #446a91 0%, #2c4a6b 100%) !important;
+}
+
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+}
+
+.left-column .section-title {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.right-column .section-title {
+    border-color: rgba(68, 106, 145, 0.3);
+    color: #2c3e50;
+}
+
+.skill-bar {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    width: 35px;
+    color: #3498db;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.2);
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 25px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 5px solid #446a91;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experience-item::before,
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 0;
+    background: #3498db;
+    transition: height 0.3s ease;
+}
+
+.experience-item:hover::before,
+.education-item:hover::before {
+    height: 100%;
+}
+
+.experience-item:hover,
+.education-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.job-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.company-name {
+    font-weight: 600;
+    color: #446a91;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.date-range {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+ul.job-description {
+    padding-left: 20px;
+    margin: 12px 0 0 0;
+}
+
+ul.job-description li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 10px;
+}
+
+ul.job-description li::before {
+    content: '▸';
+    position: absolute;
+    left: -15px;
+    color: #446a91;
+    font-weight: bold;
+}
+
+.name-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #446a91, #2c4a6b);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-top-btn.show {
+    display: flex;
+}
+
+
+/* Animación de entrada para las tarjetas */
+
+.animate-card {
+    animation: slideInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Delay para animaciones escalonadas */
+
+.animate-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.animate-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.animate-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.animate-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    .scroll-top-btn {
+        display: none !important;
+    }
+    .experience-item,
+    .education-item {
+        page-break-inside: avoid;
+    }
+}
+
+@media (max-width: 768px) {
+    .name-header {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .scroll-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
